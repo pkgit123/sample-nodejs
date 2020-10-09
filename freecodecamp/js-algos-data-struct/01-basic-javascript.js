@@ -1,3 +1,13 @@
+/* =============================================================
+    JavaScript Algorithms and Data Structures.
+    
+    Basic JavaScript section (111 lessons).
+    
+    Try to complete 10 lessons at a time, then commit to repo.  
+    Track lesson progress through commit messages.
+   =============================================================
+*/ 
+
 // Here is an in-line comment
 
 /* 
@@ -168,6 +178,151 @@ var myData = myArray[0];
 // Modify Array Data With Indexes
 var myArray = [18,64,99];
 myArray[0] = 45;
+
+// Access Multi-Dimensional Arrays With Indexes
+var myArray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14]];
+var myData = myArray[2][1];
+
+// Manipulate Arrays With push()
+var myArray = [["John", 23], ["cat", 2]];
+myArray.push(["dog", 3]);
+
+// Manipulate Arrays With pop()
+var myArray = [["John", 23], ["cat", 2]];
+var removedFromMyArray = myArray.pop();
+
+// Manipulate Arrays With shift()
+var myArray = [["John", 23], ["dog", 3]];
+var removedFromMyArray = myArray.shift();
+
+// Manipulate Arrays With unshift()
+var myArray = [["John", 23], ["dog", 3]];
+myArray.shift();
+myArray.unshift(["Paul",35]);
+
+// Shopping List
+var myList = [
+    ["Chocolate Bar", 15], 
+    ["Milk", 3], 
+    ["Bread", 10], 
+    ["Eggs", 24], 
+    ["Butter", 35]
+];
+
+// Write Reusable JavaScript with Functions
+function reusableFunction() {
+    console.log("Hi World");
+}
+reusableFunction();
+
+// Passing Values to Functions with Arguments
+function functionWithArgs(param1, param2) {
+    console.log(param1 + param2);
+}
+functionWithArgs(1,2);
+
+/* ==========================================
+    Global Scope and Functions
+   ==========================================
+*/
+
+// Declare the myGlobal variable below this line
+var myGlobal = 10;
+
+function fun1() {
+  // Assign 5 to oopsGlobal Here
+  oopsGlobal = 5; 
+}
+
+// Only change code above this line
+
+function fun2() {
+  var output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
+
+/* ==========================================
+*/
+
+
+/* ==========================================
+    Local Scope and Functions
+   ==========================================
+*/
+
+function myLocalScope() {
+  'use strict';
+
+  // Only change code below this line
+  var myVar = 23;
+
+  console.log('inside myLocalScope', myVar);
+}
+myLocalScope();
+
+// Run and check the console
+// myVar is not defined outside of myLocalScope
+console.log('outside myLocalScope', myVar);
+
+/* ==========================================
+*/
+
+
+/* ==========================================
+    lessonName
+   ==========================================
+*/
+
+/* ==========================================
+*/
+
+
+/* ==========================================
+    lessonName
+   ==========================================
+*/
+
+/* ==========================================
+*/
+
+
+/* ==========================================
+    lessonName
+   ==========================================
+*/
+
+/* ==========================================
+*/
+
+
+/* ==========================================
+    lessonName
+   ==========================================
+*/
+
+/* ==========================================
+*/
+
+
+/* ==========================================
+    lessonName
+   ==========================================
+*/
+
+/* ==========================================
+*/
+
+
+
+
+
+
 
 
 
