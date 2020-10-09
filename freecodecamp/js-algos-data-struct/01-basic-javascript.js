@@ -113,5 +113,51 @@ myStr = "This is the first sentence. ";
 myStr += "This is the second sentence.";
 
 // Constructing Strings with Variables
+var myName = "John Smith";
+var myStr = "My name is " + myName + " and I am well!";
+
+// Appending Variables to Strings
+var someAdjective = "life-changing!";
+var myStr = "Learning to code is ";
+myStr += someAdjective;
+
+// Find the Length of a String
+var lastNameLength = 0;
+var lastName = "Lovelace";
+lastNameLength = lastName.length;
+
+// Use Bracket Notation to Find the First Character in a String
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
