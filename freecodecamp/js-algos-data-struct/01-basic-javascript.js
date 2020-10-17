@@ -1311,29 +1311,119 @@ var gloveBoxContents = myStorage.car.inside["glove box"]; // Change this line
 
 
 /* ==========================================
-    lessonName
+    Basic JavaScript: Accessing Nested Arrays
+   ==========================================
+*/
+// Setup
+var myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+// Only change code below this line
+
+var secondTree = myPlants[1].list[1]; // Change this line
+
+/* ==========================================
+*/
+
+
+
+/* ==========================================
+    Basic JavaScript: Record Collection
    ==========================================
 */
 
+// Setup
+var collection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(object, id, prop, value) {
+  // delete property if "value" is empty string
+  if (value=="") {
+    delete object[id][prop];
+  }
+
+  // update property if "value" is not "tracks"
+  else if (prop!="tracks") {
+    object[id][prop] = value;
+  }
+
+  // update "tracks" property (array)
+  else {
+
+    // object has "tracks" already, update array
+    if (object[id].hasOwnProperty("tracks")) {
+      object[id]["tracks"].push(value);
+    }
+
+    // object doesn't have "tracks", create array
+    else {
+      object[id]["tracks"] = [value]
+    }
+
+  }
+  
+  return object;
+}
+
+updateRecords(collection, 5439, 'artist', 'ABBA');
+
+
+
+
+
 /* ==========================================
 */
 
 
 
 /* ==========================================
-    lessonName
+    Basic JavaScript: Iterate with JavaScript While Loops
    ==========================================
 */
 
-/* ==========================================
-*/
+// Setup
+var myArray = [];
 
-
-
-/* ==========================================
-    lessonName
-   ==========================================
-*/
+// Only change code below this line
+var i = 0;
+while (i < 6) {
+    myArray.unshift(i);
+    i++;
+}
 
 /* ==========================================
 */
