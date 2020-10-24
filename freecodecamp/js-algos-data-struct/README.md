@@ -13,4 +13,17 @@ Official listed as 300 hours.  But it budgets each exercise as 1 hour, but most 
 1. Intermediate algorithm scripting (21)
 1. Javascript algorithms and data structures projects (5) 
 
-After this one is completed, move on to APIs and Microservices (with the goal of learning JAMstack).
+Track completions:
+1. Basic JavaScript: 
+    * Started Oct 7, 2020; Ended Oct 24, 2020.  
+    * 111 lessons in 18 days.
+    * Pace is 6 lessons per day.
+    
+    
+Not sure what to pursue after this one is completed
+My eventual goal is to learn JAMstack and serverless.
+So the interesting modeule is APIs and Microservices.
+But I don't know if I will be able to follow the APIs and Microservices without completing the other modules:
+  * Front End Libraries
+  * Data Visualization
+  * Responsive Web Design
