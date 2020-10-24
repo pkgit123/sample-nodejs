@@ -1624,104 +1624,195 @@ lookUpProfile("Akira", "likes");
 
 
 /* ==========================================
-    lessonName
+    Basic JavaScript: Generate Random Fractions with JavaScript
    ==========================================
 */
 
+function randomFraction() {
+
+  // Only change code below this line
+  // Math.random() returns decimal x where: 0 <= x < 1
+  // Math.random can never return 1.
+
+  return Math.random();
+
+  // Only change code above this line
+}
+
 /* ==========================================
 */
 
 
 /* ==========================================
-    lessonName
+    Basic JavaScript: Generate Random Whole Numbers with JavaScript
    ==========================================
 */
 
+function randomWholeNum() {
+
+  // Only change code below this line
+  // since Math.random() can never return 1, then the below result can never return 10
+  // the below result will return an integer between 0 and 9.
+  // if we wanted an integer between 0 and 10, then need to add 1 to the result.  
+  return Math.floor(Math.random() * 10);
+}
+
+
 /* ==========================================
 */
 
 
 /* ==========================================
-    lessonName
+    Basic JavaScript: Generate Random Whole Numbers within a Range
    ==========================================
 */
 
+function randomRange(myMin, myMax) {
+  // Only change code below this line
+  // example myMin=3, myMax=8, the below code will return integer between 3 and 8.  
+  // the inner code Math.floor(Math.random() * (myMax - myMin + 1) ) returns integer between 0 and 5.
+  return Math.floor(Math.random() * (myMax - myMin + 1) ) + myMin;
+  // Only change code above this line
+}
+
+
 /* ==========================================
 */
 
 
 /* ==========================================
-    lessonName
+    Basic JavaScript: Use the parseInt Function
    ==========================================
 */
 
+function convertToInteger(str) {
+    return parseInt(str);
+}
+
+convertToInteger("56");
+
+
 /* ==========================================
 */
 
 
 /* ==========================================
-    lessonName
+    Basic JavaScript: Use the parseInt Function with a Radix
    ==========================================
 */
 
+function convertToInteger(str) {
+    // second parameter "radix" is same as base number
+    // radix=10 is base 10
+    // radix=2 is base 2, or binary
+    return parseInt(str, 2);
+}
+
+convertToInteger("10011");
+
+
 /* ==========================================
 */
 
 
 /* ==========================================
-    lessonName
+    Basic JavaScript: Use the Conditional (Ternary) Operator
    ==========================================
 */
 
+function checkEqual(a, b) {
+    /**
+     * The conditional operator, also called the ternary operator, can be used as a one line if-else expression.
+     * The syntax is:
+     * condition ? expression-if-true : expression-if-false;
+     */
+    return a==b ? "Equal" : "Not Equal";
+}
+
+checkEqual(1, 2);
+
+
 /* ==========================================
 */
 
 
 /* ==========================================
-    lessonName
+    Basic JavaScript: Use Multiple Conditional (Ternary) Operators
    ==========================================
 */
 
+function checkSign(num) {
+    /**
+     * Ternary operators are like if-elif-else conditional statements.
+     */
+    return (num == 0) ? "zero"
+        : (num > 0) ? "positive"
+        : "negative"; 
+}
+
+checkSign(10);
+
 /* ==========================================
 */
 
 
 /* ==========================================
-    lessonName
+    Basic JavaScript: Use Recursion to Create a Countdown
    ==========================================
 */
 
+// Only change code below this line
+function countdown(n){
+  /**
+   * Recursion has base case, which will eventually be reached.
+   * Otherwise, the recursive function should call itself.
+   * When it calls itself, it should approach base case.  
+   * Use array.unshift(), rather than array.push().
+   * Expected output when n=10 is [10, 9, 8, 7, 6, 5, 4, 3, 2, 1] 
+   */
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countdown(n - 1);
+    countArray.unshift(n);
+    return countArray;
+  }
+}
+// Only change code above this line
+
 /* ==========================================
 */
 
 
 /* ==========================================
-    lessonName
+    Basic JavaScript: Use Recursion to Create a Range of Numbers
    ==========================================
 */
 
+function rangeOfNumbers(startNum, endNum) {
+  /**
+   * The base case is when startNum==endNum, in which case return array with endNum.
+   */
+  if (startNum == endNum) {
+    return [endNum];
+  }
+  else {
+    const arrayRange = rangeOfNumbers(startNum, endNum - 1);
+    arrayRange.push(endNum);
+    return arrayRange;
+  }
+};
+
+
 /* ==========================================
 */
 
 
-/* ==========================================
-    lessonName
-   ==========================================
-*/
-
-/* ==========================================
-*/
-
-
-/* ==========================================
-    lessonName
-   ==========================================
-*/
-
-/* ==========================================
-*/
-
-
+/**
+ * FINISHED BASIC JAVASCRIPT!  
+ * 111 exercises.  
+ * YAY!
+ */
 
 
 
