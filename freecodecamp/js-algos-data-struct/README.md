@@ -20,9 +20,12 @@ Track completions:
     * Pace is 6 lessons per day.
     
     
-Not sure what to pursue after this one is completed
+Not sure what to pursue after this one is completed.
+
 My eventual goal is to learn JAMstack and serverless.
+
 So the interesting modeule is APIs and Microservices.
+
 But I don't know if I will be able to follow the APIs and Microservices without completing the other modules:
   * Front End Libraries
   * Data Visualization
