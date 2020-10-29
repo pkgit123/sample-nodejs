@@ -167,62 +167,190 @@ console.log(arr2);
 
 
  /**
-  *
+  * ES6: Use Destructuring Assignment to Extract Values from Objects
+  * Keep the variable name the same as object key.
   */
+
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+// Only change code below this line
+
+const { today, tomorrow } = HIGH_TEMPERATURES;
+
+// Only change code above this line
 
 
  /**
-  *
+  * ES6: Use Destructuring Assignment to Assign Variables from Objects
+  * Change the variable name.
   */
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+// Only change code below this line
+
+const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
+
+// Only change code above this line
 
 
  /**
-  *
+  * ES6: Use Destructuring Assignment to Assign Variables from Nested Objects
   */
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+// Only change code below this line
+
+const { today: { low: lowToday, high: highToday } } = LOCAL_FORECAST; 
+
+// Only change code above this line
 
 
  /**
-  *
+  * ES6: Use Destructuring Assignment to Assign Variables from Arrays
   */
+let a = 8, b = 6;
+// Only change code below this line
+[b, a] = [a, b];
+
+ /**
+  * ES6: Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+  */
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  "use strict";
+  // Only change code below this line
+  const [a, b, ...arr] = list; // Change this line
+  // Only change code above this line
+  return arr;
+}
+const arr = removeFirstTwo(source);
 
 
  /**
-  *
+  * ES6: Use Destructuring Assignment to Pass an Object as a Function's Parameters
   */
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+// Only change code below this line
+
+const half = ({ max, min }) => (max + min) / 2.0; 
+// Only change code above this line
 
 
  /**
-  *
+  * ES6: Create Strings using Template Literals
   */
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+  // Only change code below this line
+  const failureItems = [];
+  for (let i = 0; i<arr.length; i++) {
+    failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
+  }
+  // Only change code above this line
+
+  return failureItems;
+}
+
+const failuresList = makeList(result.failure);
 
 
  /**
-  *
+  * ES6: Write Concise Object Literal Declarations Using Object Property Shorthand
+  * The syntax appear to be ({ x, y, z }), where the key name is the variable listed, and the value is the key in the input object.  
   */
+const createPerson = (name, age, gender) => {
+  "use strict";
+  // Only change code below this line
+  return ({ name, age, gender });
+  // Only change code above this line
+};
 
 
  /**
-  *
+  * ES6: Write Concise Declarative Functions with ES6
+  * Strange ... JavaScript allows a function to be created within an object ... almost like a method.
+  * Keyword "this" is like "self" in Python.
   */
+// Only change code below this line
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear;
+  }
+};
+// Only change code above this line
+bicycle.setGear(3);
+console.log(bicycle.gear);
 
 
  /**
-  *
+  * ES6: Use class Syntax to Define a Constructor Function
+  * "Constructor" is a special keyword for creating new function
+  * Keyword "this" is like "self" in Python.
   */
+// Only change code below this line
+class Vegetable {
+    constructor(name) {
+        this.name = name;
+    }
+}
+// Only change code above this line
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // Should display 'carrot'
 
 
  /**
-  *
+  * ES6: Use getters and setters to Control Access to an Object
   */
+
+// Only change code below this line
+class Thermostat {
+    constructor(fahrenheit) {
+        this._temperature = 5/9 * (fahrenheit - 32);
+    }
+    get temperature() {
+        return this._temperature;
+    }
+    set temperature(celsius) {
+        this._temperature = celsius;
+    }
+}
+// Only change code above this line
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in Celsius
+
 
 
  /**
-  *
-  */
-
-
- /**
-  *
+  * ES6: Create a Module Script
   */
 
 
