@@ -353,129 +353,151 @@ temp = thermos.temperature; // 26 in Celsius
   * ES6: Create a Module Script
   */
 
+<html>
+  <body>
+    <!-- Only change code below this line -->
+    <script type="module" src="index.js"></script>
+    <!-- Only change code above this line -->
+  </body>
+</html>
 
  /**
-  *
+  * ES6: Use export to Share a Code Block
   */
 
+const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+
+const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+
+export { uppercaseString, lowercaseString };
 
  /**
-  *
+  * ES6: Reuse JavaScript Code Using import
   */
 
+import { uppercaseString, lowercaseString } from './string_functions.js';
+// Only change code above this line
 
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
+uppercaseString("hello");
+lowercaseString("WORLD!");
 
 
  /**
-  *
+  * ES6: Use * to Import Everything from a File
   */
+
+import * as stringFunctions from "./string_functions.js";
+// Only change code above this line
+
+stringFunctions.uppercaseString("hello");
+stringFunctions.lowercaseString("WORLD!");
+
+ /**
+  * ES6: Create an Export Fallback with export default
+  */
+
+export default function subtract(x, y) {
+  return x - y;
+}
+
+ /**
+  * ES6: Import a Default Export
+  * With a Default Export, the import statement does not require curly braces {}
+  */
+
+import subtract from "./math_functions.js";  
+// Only change code above this line
+
+subtract(7,4);
 
 
  /**
+  * ES6: Create a JavaScript Promise
   *
+  * A promise in JavaScript is exactly what it sounds like - 
+  * you use it to make a promise to do something, usually asynchronously. 
+  * When the task completes, you either fulfill your promise or fail to do so.
+  * 
+  * Promise is a constructor function, so you need to use the new keyword to create one. 
+  * It takes a function, as its argument, with two parameters - resolve and reject. 
+  * These are methods used to determine the outcome of the promise. 
   */
+
+const makeServerRequest = new Promise((resolve, reject) => {
+  
+});
+
+ /**
+  * ES6: Complete a Promise with resolve and reject
+  */
+
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer represents a response from a server
+  let responseFromServer;
+    
+  if(responseFromServer) {
+    // Change this line
+    resolve("We got the data");
+  } else {  
+    // Change this line
+    reject("Data not received");
+  }
+});
 
 
  /**
+  * ES6: Handle a Fulfilled Promise with then
   *
+  * Promises are most useful when you have a process that takes an 
+  * unknown amount of time in your code (i.e. something asynchronous), often a server request. 
   */
 
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to true to represent a successful response from a server
+  let responseFromServer = true;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+// see below for .then() method of Promise
+makeServerRequest.then(result => {
+  console.log(result);
+});
 
  /**
+  * ES6: Handle a Rejected Promise with catch
   *
+  * catch is the method used when your promise has been rejected. 
+  * It is executed immediately after a promise's reject method is called. 
   */
 
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to false to represent an unsuccessful response from a server
+  let responseFromServer = false;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
 
- /**
-  *
-  */
+makeServerRequest.then(result => {
+  console.log(result);
+});
 
+// see below for .catch() method of Promise
+makeServerRequest.catch(error => {
+  console.log(error);
+});
 
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
-
-
- /**
-  *
-  */
 
 
