@@ -102,63 +102,105 @@ let result = quoteSample.match(myRegex); // Change this line
 
 
 /**
-
+ * Regular Expressions: Match Single Characters Not Specified
+ * Caret symbol ("^") specifies negated character sets.  
  */
 
+let quoteSample = "3 blind mice.";
+let myRegex = /[^aeiou0-9]/gi; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
 
 
 /**
-
+ * Regular Expressions: Match Characters that Occur One or More Times
+ * The plus sign "+" is 1-or-more 
  */
 
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/gi; // Change this line
+let result = difficultSpelling.match(myRegex);
 
 
 /**
-
+ * Regular Expressions: Match Characters that Occur Zero or More Times
+ The star sign "*" is zero-or-more
  */
 
+// Only change code below this line
+let chewieRegex = /Aa*/g; // Change this line
+// Only change code above this line
+
+let result = chewieQuote.match(chewieRegex);
 
 
 /**
-
+ * Regular Expressions: Find Characters with Lazy Matching
+ * The question mark "?" is lazy matching, i.e. find shortest match if multiple
+ * The default matching is greedy matching, i.e. find longest match if multiple
  */
 
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?>/; // Change this line
+let result = text.match(myRegex);
 
 
 /**
-
+ * Regular Expressions: Find One or More Criminals in a Hunt
  */
 
+let reCriminals = /C+/; // Change this line
 
 
 /**
-
+ * Regular Expressions: Match Beginning String Patterns
+ * The caret inside character set is negated, e.g. not "a" /[^a]/
+ * The caret outside character set means beginning of string, e.g. "a" at beginning /^a/
  */
 
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result = calRegex.test(rickyAndCal);
 
 
 /**
-
+ * Regular Expressions: Match Ending String Patterns
+ * Use anchor character $ to match end of string.
  */
 
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+let result = lastRegex.test(caboose);
 
 
 /**
-
+ * Regular Expressions: Match All Letters and Numbers
+ * The shorthand character class "\w" is equivalent to /[A-Za-z0-9_]/ i.e. all letters, numbers, and underscore
  */
 
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g; // Change this line
+let result = quoteSample.match(alphabetRegexV2).length;
 
 
 /**
-
+ * Regular Expressions: Match Everything But Letters and Numbers
+ * Opposite of \w is \W ... the opposite for shorthand character class uses upper-case letter
+ * The shorthand character class "\W" is equivalent to [^A-Za-z0-9_]
  */
 
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g; // Change this line
+let result = quoteSample.match(nonAlphabetRegex).length;
 
 
 /**
-
+ * Regular Expressions: Match All Numbers
+ * The shorthand character class "\d" matches all numbers, equivalent to [0-9]
  */
 
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g; // Change this line
+let result = movieName.match(numRegex).length;
 
 
 /**
