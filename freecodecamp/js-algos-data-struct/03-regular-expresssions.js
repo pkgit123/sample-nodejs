@@ -40,6 +40,7 @@ let result = petRegex.test(petString);
 
 /**
  * Regular Expressions: Ignore Case While Matching
+ * The "i" outside of regex is ignore case, e.g. /regex/i;
  */
 
 let myString = "freeCodeCamp";
@@ -204,49 +205,87 @@ let result = movieName.match(numRegex).length;
 
 
 /**
-
+ * Regular Expressions: Match All Non-Numbers
+ * The shorthand character class "\D" (uppercase) matches all non-numbers
+ * The shorthand character class "\d" (lowercase) matches all numbers.
  */
 
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g; // Change this line
+let result = movieName.match(noNumRegex).length;
 
 
 /**
-
+ * Regular Expressions: Restrict Possible Usernames
+ *
+ * 1) Usernames can only use alpha-numeric characters.
+ * 2) The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+ * 3) Username letters can be lowercase and uppercase.
+ * 4) Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+ *
+ * Starts with 2 letters, keep in mind two-character username can only have alphabet letters, make sure only ends in 0+ numbers: ^[a-z][a-z]+\d*$
+ * Starts with 1 letter, but more than two-characters, ends with numbers: ^[a-z]\d+\d+$
  */
 
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d+\d+$/i; // Change this line
+let result = userCheck.test(username);
 
 
 /**
-
+ * Regular Expressions: Match Whitespace
+ * The character class "\s" includes whitespace, but also carriage return, tab, form feed, and new line characters
+ * The "\s" is same as [ \r\t\f\n\v].
  */
 
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g; // Change this line
+let result = sample.match(countWhiteSpace);
 
 
 /**
-
+ * Regular Expressions: Match Non-Whitespace Characters
+ * The character class "\S" (uppercase) matches everything except "\s" (lowercase)
+ * The "\S" is same as [^ \r\t\f\n\v].
  */
 
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; // Change this line
+let result = sample.match(countNonWhiteSpace);
 
 
 /**
-
+ * Regular Expressions: Specify Upper and Lower Number of Matches
+ * The quantity specifiers use {x,y} to specify {lower,upper} number of matches.
  */
 
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6} no/; // Change this line
+let result = ohRegex.test(ohStr);
 
 
 /**
-
+ * Regular Expressions: Specify Only the Lower Number of Matches
+ * The quantity specifiers use {x,} to specify {lower,} number of matches.
  */
 
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; // Change this line
+let result = haRegex.test(haStr);
 
 
 /**
-
+ * Regular Expressions: Specify Exact Number of Matches
+ * The quantity specifiers use {x} to specify {exact} number of matches.
  */
 
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // Change this line
+let result = timRegex.test(timStr);
 
 
 /**
-
+ * 
  */
 
 
