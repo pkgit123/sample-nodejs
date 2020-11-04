@@ -285,15 +285,30 @@ let result = timRegex.test(timStr);
 
 
 /**
- * 
+ * Regular Expressions: Check for All or None
+ * The "?" character is searching for 0+ instances, i.e. optional.
  */
 
+let favWord = "favorite";
+let favRegex = /favou?rite/; // Change this line
+let result = favRegex.test(favWord);
 
 
 /**
-
+ * Regular Expressions: Positive and Negative Lookahead
+ *
+ * Lookaheads are patterns that tell JavaScript to look-ahead in your string to check for patterns further along. 
+ * The "?=" pattern is positive lookahead.
+ * The "?!" pattern is negative lookahead.
+ *
+ * "^\D" means starts with non-number
+ * "(?=\w{5,})" means positive lookahead at least 6 characters long
+ * "(?=\w*\d{2})" means positive lookahead 0+ characters followed 2 consecutive digits
  */
 
+let sampleWord = "astronaut";
+let pwRegex = /^\D(?=\w{5,})(?=\w*\d{2})/; // Change this line
+let result = pwRegex.test(sampleWord);
 
 
 /**
