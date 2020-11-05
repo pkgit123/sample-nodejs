@@ -165,7 +165,7 @@ let result = calRegex.test(rickyAndCal);
 
 /**
  * Regular Expressions: Match Ending String Patterns
- * Use anchor character $ to match end of string.
+ * Use anchor character "$" to match end of string.
  */
 
 let caboose = "The last car on a train is the caboose";
@@ -312,98 +312,58 @@ let result = pwRegex.test(sampleWord);
 
 
 /**
-
+ * Regular Expressions: Check For Mixed Grouping of Characters
  */
 
+let myString = "Eleanor Roosevelt";
+let myRegex = /(Franklin D.|Eleanor) Roosevelt/; // Change this line
+let result = myRegex.test(myString); // Change this line
+// After passing the challenge experiment with myString and see how the grouping works
 
 
 /**
-
+ * Regular Expressions: Reuse Patterns Using Capture Groups
+ * 
+ * The "()\1" specifies repeat capture groups, meaning find where this pattern appears once.
+ * The "$" anchor means end of string.
+ * The "^" caret outside character set means beginning of string.
  */
 
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/; // Change this line
+let result = reRegex.test(repeatNum);
 
 
 /**
-
+ * Regular Expressions: Use Capture Groups to Search and Replace
+ * The below "one two three" should be replaced with "three two one".  
+ * 
+ * The syntax str.replace(findRegex, replaceText) allows for searching and replace.
+ * The regex can have capture groups with parentheses "()".
+ * The capture groups can be used in replacement string with "$" followed by number index.
  */
 
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
+let replaceText = "$3 $2 $1"; // Change this line
+let result = str.replace(fixRegex, replaceText);
 
 
 /**
-
+ * Regular Expressions: Remove Whitespace from Start and End
+ *
+ * The caret "^" means beginning of string.
+ * The anchor "$" means end of string.
+ * The boolean "|" means OR.
+ * The global "g" means match multiple patterns.
+ *
+ * I was confused by this exercise because I assumed it would use capture groups and "$" like last lesson.  
  */
 
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s*|\s*$/g; // Change this line
+let result = hello.replace(wsRegex, ""); // Change this line
 
-
-/**
-
- */
-
-
-
-/**
-
- */
-
-
-
-/**
-
- */
-
-
-
-/**
-
- */
-
-
-
-/**
-
- */
-
-
-
-/**
-
- */
-
-
-
-/**
-
- */
-
-
-
-/**
-
- */
-
-
-
-/**
-
- */
-
-
-
-/**
-
- */
-
-
-
-/**
-
- */
-
-
-
-/**
-
- */
 
 
 
