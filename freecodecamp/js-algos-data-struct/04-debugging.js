@@ -10,6 +10,7 @@
 /** =================================
  *  Debugging: Use the JavaScript Console to Check the Value of a Variable
  *  JavaScript console called DevTools
+ *  In Firefox browser, Control+Shift+k ... a REPL appears at bottom of browser.
  *  console.log()
  */
 
