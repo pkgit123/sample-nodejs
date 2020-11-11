@@ -27,6 +27,10 @@ Track completions:
       * 33 lessons in 5 days.
       * Pace is 7 lessons per day.  
 1. Debugging
+      * Started Nov 6, 2020; Ended Nov 10, 2020.
+      * 12 lessons in 5 days.
+      * Pace is 2 lessons per day.
+1. Basic Data Structures
 
     
 Not sure what to pursue after this one is completed.
