@@ -179,45 +179,175 @@ console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
 
 
 /** =============================================
- *  
+ *  Basic Data Structures: Create complex multi-dimensional arrays
  *  
  */
+
+let myNestedArray = [
+  // Only change code below this line
+  ['second', 
+    ['third', 'deep', 
+      ['fourth', 'deeper', 
+        ['fifth', 'deepest'
+      ]
+    ]
+  ]],
+  ['unshift', false, 1, 2, 3, 'complex', 'nested'],
+  ['loop', 'shift', 6, 7, 1000, 'method'],
+  ['concat', false, true, 'spread', 'array'],
+  ['mutate', 1327.98, 'splice', 'slice', 'push'],
+  ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth']
+  // Only change code above this line
+];
 
 
 /** =============================================
- *  
+ *  Basic Data Structures: Add Key-Value Pairs to JavaScript Objects
+ *  key-value
+ *  property-data
+ */
+
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28
+};
+
+// Only change code below this line
+foods['bananas'] = 13;
+foods['grapes'] = 35;
+foods['strawberries'] = 27;
+// Only change code above this line
+
+console.log(foods);
+
+/** =============================================
+ *  Basic Data Structures: Modify an Object Nested Within an Object
  *  
  */
+
+let userActivity = {
+  id: 23894201352,
+  date: 'January 1, 2017',
+  data: {
+    totalUsers: 51,
+    online: 42
+  }
+};
+
+// Only change code below this line
+userActivity.data.online = 45;
+// Only change code above this line
+
+console.log(userActivity);
 
 
 /** =============================================
- *  
+ *  Basic Data Structures: Access Property Names with Bracket Notation
  *  
  */
+
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+function checkInventory(scannedItem) {
+  // Only change code below this line
+  return foods[scannedItem];
+  // Only change code above this line
+}
+
+console.log(checkInventory("apples"));
 
 
 /** =============================================
- *  
+ *  Basic Data Structures: Use the delete Keyword to Remove Object Properties
  *  
  */
+
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+// Only change code below this line
+delete foods['oranges'];
+delete foods['plums'];
+delete foods['strawberries'];
+
+// Only change code above this line
+
+console.log(foods);
 
 
 /** =============================================
- *  
- *  
+ *  Basic Data Structures: Check if an Object has a Property
+ *  'Alan' in users;
+ *  users.hasOwnProperty('Alan');
+ *  The .hasOwnProperty() method can check multiple values.
+ *  The && is boolean check.
+ *  The & converts the value to number but use is discouraged in JS.
  */
+
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(obj) {
+  // Only change code below this line
+  let checkAlan = obj.hasOwnProperty('Alan');
+  let checkJeff = obj.hasOwnProperty('Jeff');
+  let checkSarah = obj.hasOwnProperty('Sarah');
+  let checkRyan = obj.hasOwnProperty('Ryan');
+  return checkAlan && checkJeff && checkSarah && checkRyan;
+  // Only change code above this line
+}
+
+console.log(isEveryoneHere(users));
+
 
 
 /** =============================================
- *  
- *  
+ *  Basic Data Structures: Iterate Through the Keys of an Object with a for...in Statement
+ *  Tricky because the key must be accessed using the [bracket], but the nested key must be accessed using the dot "." 
  */
 
+function countOnline(usersObj) {
+  // Only change code below this line
+  let result = 0;
+  for (let user in usersObj) {
+    if (usersObj[user].online == true) {
+      result +=1;
+    }
+  }
+  return result;
+  // Only change code above this line
+}
 
-/** =============================================
- *  
- *  
- */
 
 
 /** =============================================
