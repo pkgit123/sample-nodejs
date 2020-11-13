@@ -31,6 +31,10 @@ Track completions:
       * 12 lessons in 5 days.
       * Pace is 2 lessons per day.
 1. Basic Data Structures
+      * Started Nov 11, 2020; Ended Nov 13, 2020.
+      * 20 lessons in 3 days.
+      * Pace is 7 lessons per day.
+1. Basic Algorithm Scripting
 
     
 Not sure what to pursue after this one is completed.
