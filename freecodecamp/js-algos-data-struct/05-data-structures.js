@@ -333,6 +333,7 @@ console.log(isEveryoneHere(users));
 
 /** =============================================
  *  Basic Data Structures: Iterate Through the Keys of an Object with a for...in Statement
+ *  
  *  Tricky because the key must be accessed using the [bracket], but the nested key must be accessed using the dot "." 
  */
 
@@ -351,38 +352,77 @@ function countOnline(usersObj) {
 
 
 /** =============================================
+ *  Basic Data Structures: Generate an Array of All Object Keys with Object.keys()
  *  
- *  
+ *  Example JS object called objUsers
+ *  To generate array of keys, syntax is Object.keys(objUsers);
  */
+
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function getArrayOfUsers(obj) {
+  // Only change code below this line
+  return Object.keys(obj);
+  // Only change code above this line
+}
+
+console.log(getArrayOfUsers(users));
+
 
 
 /** =============================================
- *  
+ *  Basic Data Structures: Modify an Array Stored in an Object
  *  
  */
+
+let user = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+function addFriend(userObj, friend) {
+  // Only change code below this line
+  userObj.data.friends.push(friend);
+  return userObj.data.friends;
+  // Only change code above this line
+}
+
+console.log(addFriend(user, 'Pete'));
 
 
 /** =============================================
- *  
- *  
- */
-
-
-/** =============================================
- *  
+ *  ALL DONE!!!
  *  
  */
-
-
-/** =============================================
- *  
- *  
- */
-
-
-/** =============================================
- *  
- *  
- */
-
-
