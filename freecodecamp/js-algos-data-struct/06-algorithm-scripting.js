@@ -12,12 +12,38 @@
  *  
  */
  
+function convertToF(celsius) {
+  let fahrenheit = ((celsius * (9/5)) + 32);
+  return fahrenheit;
+}
 
+convertToF(30);
+
+console.log(convertToF(30));
  
  
 /** =============================================
- *  
+ *  Basic Algorithm Scripting: Reverse a String
  */
+
+function reverseString(str) {
+  // convert string to array
+  // alternate code str.split('');
+  let arrStr = [...str];
+  console.log(arrStr);
+  
+  // use array.reverse();
+  let arrRevStr = arrStr.reverse();
+  console.log(arrRevStr);
+
+  // convert array to string
+  let strRev = arrRevStr.join();
+  console.log(strRev);
+
+  return strRev;
+}
+
+reverseString("hello");
 
 
 /** =============================================
