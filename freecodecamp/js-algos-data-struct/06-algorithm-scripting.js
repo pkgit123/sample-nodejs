@@ -27,17 +27,17 @@ console.log(convertToF(30));
  */
 
 function reverseString(str) {
-  // convert string to array
-  // alternate code str.split('');
+  // convert string to array using [...str]
+  // alternate code str.split('')
   let arrStr = [...str];
   console.log(arrStr);
   
-  // use array.reverse();
+  // reverse array using array.reverse()
   let arrRevStr = arrStr.reverse();
   console.log(arrRevStr);
 
-  // convert array to string
-  let strRev = arrRevStr.join();
+  // convert array to string with array.join('')
+  let strRev = arrRevStr.join('');
   console.log(strRev);
 
   return strRev;
