@@ -122,19 +122,66 @@ largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 85
  *  Basic Algorithm Scripting: Confirm the Ending
  */
 
+function confirmEnding(str, target) {
+  
+  // measure length of target string
+  let lenTarget = target.length;
+  
+  // check end of str using negative indexing on str.slice()
+  let strSuffix = str.slice(-lenTarget);
+  
+  // compare suffix with target
+  let result = (target == strSuffix);
+  
+  return result;
+}
+
+confirmEnding("Bastian", "n");
+
 
 /** =============================================
- *  
+ *  Basic Algorithm Scripting: Repeat a String Repeat a String
  */
 
+function repeatStringNumTimes(str, num) {
+  // initialize result as empty string
+  let result = ''
+
+  // if num argument greater than zero, repeat 
+  if (num>0) {
+    for (let i=0; i<num; i++) {
+      result += str
+    }
+  }
+  
+  return result;
+}
+
+repeatStringNumTimes("abc", 3);
+
 
 /** =============================================
- *  
+ *  Basic Algorithm Scripting: Truncate a String
  */
 
+function truncateString(str, num) {
+
+  if (str.length > num) {
+    let result = str.slice(0, num) + "...";
+    
+    return result;
+  }
+  else {
+    return str;
+  }
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 8);
+
+
 
 /** =============================================
- *  
+ *  Basic Algorithm Scripting: Finders Keepers
  */
 
 
