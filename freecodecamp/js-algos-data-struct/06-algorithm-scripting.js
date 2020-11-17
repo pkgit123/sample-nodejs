@@ -182,22 +182,83 @@ truncateString("A-tisket a-tasket A green and yellow basket", 8);
 
 /** =============================================
  *  Basic Algorithm Scripting: Finders Keepers
- *  
+ *  With function as input, simply call func().
+ *  Two return statements: (1) inside for-loop, (2) after for-loop.  
+ *  By default, if doesn't return from for-loop, return at the end.
  */
+
+function findElement(arr, func) {
+  
+  // initialize variable to store number from array
+  let num=0;
+
+  for (let i = 0; i<arr.length; i++) {
+    
+    // assign number in array
+    num = arr[i];
+
+    // evaluate number against function, pass as 'true'
+    if (func(num)) {
+      return num;
+    }
+  }
+  
+  // nothing in array passed as 'true'
+  return undefined;
+
+}
+
+findElement([1, 2, 3, 4], num => num % 2 === 0);
+
 
 
 /** =============================================
- *  
+ *  Basic Algorithm Scripting: Boo who
+ *  Use the triple-equals "===" to match variable type
  */
+
+function booWho(bool) {
+  if (bool===true || bool===false) {
+    return true;
+  }
+  else
+    return false;
+}
+
+booWho(null);
+
 
 
 /** =============================================
- *  
+ *  Basic Algorithm Scripting: Title Case a Sentence
  */
+
+function titleCase(str) {
+
+  // convert str to lowercase
+  let strLower = str.toLowerCase();
+  
+  // split strLower into array of words
+  let arrLowerStr = strLower.split(' ');
+
+  // loop through array, title case each word
+  // first letter use .charAt(0).toUpperCase()
+  // rest of word to end use .slice(1)
+  for (let i=0; i<arrLowerStr.length; i++) {
+    arrLowerStr[i] = arrLowerStr[i].charAt(0).toUpperCase() + arrLowerStr[i].slice(1); 
+  }
+
+  // join array to strResult
+  let strResult = arrLowerStr.join(' ')
+  
+  return strResult;
+}
+
+titleCase("I'm a little tea pot");
 
 
 /** =============================================
- *  
+ *  Basic Algorithm Scripting: Slice and Splice
  */
 
 
