@@ -259,12 +259,47 @@ titleCase("I'm a little tea pot");
 
 /** =============================================
  *  Basic Algorithm Scripting: Slice and Splice
+ *  Instead of using array.splice(), I used array.concat()
  */
+
+function frankenSplice(arr1, arr2, n) {
+
+  // use array.slice() to create beginning of array
+  let arrBegin = arr2.slice(0, n);
+  
+  // use array.slice() to create end of array
+  let arrEnd = arr2.slice(n);
+  
+  // use array.concat() to concat arrays
+  let arrResult = arrBegin.concat(arr1).concat(arrEnd)
+  
+  return arrResult;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
 
 
 /** =============================================
- *  
+ *  Basic Algorithm Scripting: Falsy Bouncer
+ *  Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
  */
+
+function bouncer(arr) {
+
+  // create empty array to store results
+  let arrResult = [];
+
+  // check Boolean() of elements in array using "!!"
+  for (let i=0; i<arr.length; i++) {
+    if (!!arr[i]) {
+      arrResult.push(arr[i]);
+    }
+  }
+
+  return arrResult;
+}
+
+bouncer([7, "ate", "", false, 9]);
 
 
 /** =============================================
