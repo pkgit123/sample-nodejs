@@ -303,12 +303,58 @@ bouncer([7, "ate", "", false, 9]);
 
 
 /** =============================================
- *  
+ *  Basic Algorithm Scripting: Where do I Belong
+ *  use "array.sort()" to sort the array
+ *  use arr.sort((a,b)=>a-b) to sort by number not string
+ *  use arr[arr.length - 1] to retrieve last item in array
+ *  when checking for empty array, check whether undefined or length 0
  */
+
+function getIndexToIns(arr, num) {
+
+  // sort the array, need sort function
+  let arrSorted = arr.sort((a,b)=>a-b);
+
+  // store array length, use in multiple places
+  let lengthArraySorted = arrSorted.length;
+  
+  // initialize result as 0
+  let result = 0;
+
+  // branch if array is empty
+  if (arrSorted === undefined || arrSorted.length == 0) {
+    return result;
+  }
+
+  // branch if num at beginning 
+  else if (num<=arrSorted[0]) {
+    return result;
+  }
+
+  // branch if num after end
+  else if (num>arrSorted[lengthArraySorted - 1]) {
+    result = lengthArraySorted
+    return result;
+  }
+
+  // loop through array figure out where it belongs
+  else {
+    console.log('BranchElse');
+    for (let i=0; i<lengthArraySorted; i++) {
+      if (num>=arrSorted[i] && num<=arrSorted[i+1]) {
+        result = i+1;
+        return result;
+      }
+    }
+  }
+
+}
+
+getIndexToIns([], 1);
 
 
 /** =============================================
- *  
+ *  Basic Algorithm Scripting: Mutations
  */
 
 
