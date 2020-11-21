@@ -355,12 +355,78 @@ getIndexToIns([], 1);
 
 /** =============================================
  *  Basic Algorithm Scripting: Mutations
+ *  "str.includes()" returns true/false if substring in str
  */
+
+function mutation(arr) {
+
+  // extract first str item, lowercase
+  let strFirst = arr[0].toLowerCase();
+  console.log(strFirst);
+
+  // extract second str item, lowercase
+  let strSecond = arr[1].toLowerCase();
+  console.log(strSecond);
+
+  // convert second str item into array of letters
+  let arrSecond = strSecond.split('');
+  console.log(arrSecond);
+
+  // loop through array of letters from second str
+  for (let i=0; i<arrSecond.length; i++) {
+    let boolFoundLetter = strFirst.includes(arrSecond[i]);
+    console.log(boolFoundLetter);
+
+    // if letter from second str missing from first str,
+    // return false
+    if (boolFoundLetter==false) {
+      return false;
+    }
+
+  }
+
+  // else return true
+  return true
+}
+
+mutation(["hello", "hey"]);
 
 
 /** =============================================
- *  
+ *  Basic Algorithm Scripting: Chunky Monkey
  */
+
+function chunkArrayInGroups(arr, size) {
+
+  
+  // slice array into first chunk
+  let arrFirstChunk = arr.slice(0, size);
+  console.log(arrFirstChunk);
+
+  // slice array into second chunk
+  let arrSecondChunk = arr.slice(size, sizeTwice);
+  console.log(arrSecondChunk);
+
+  // result is two-dimensional array of chunks
+  let arrResult = [arrFirstChunk, arrSecondChunk];
+  console.log(arrResult);
+
+  // slice array into leftover chunk, if exists
+  if (arr.length>sizeTwice) {
+    let arrLeftover = arr.slice(sizeTwice);
+    console.log(arrLeftover);
+
+    // add leftover to end of result
+    arrResult.push(arrLeftover)
+    console.log(arrResult);
+  }
+
+  return arrResult;
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2);
+
+
 
 
 /** =============================================
