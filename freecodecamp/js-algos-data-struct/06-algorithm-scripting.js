@@ -398,33 +398,35 @@ mutation(["hello", "hey"]);
 
 function chunkArrayInGroups(arr, size) {
 
-  
-  // slice array into first chunk
-  let arrFirstChunk = arr.slice(0, size);
-  console.log(arrFirstChunk);
+  // initialize variables for array length, index begin, index end
+  let lenArr = arr.length;
+  let idxBegin = 0;
+  let idxEnd = size;
 
-  // slice array into second chunk
-  let arrSecondChunk = arr.slice(size, sizeTwice);
-  console.log(arrSecondChunk);
+  // empty array to store result
+  let arrResult = [];
 
-  // result is two-dimensional array of chunks
-  let arrResult = [arrFirstChunk, arrSecondChunk];
-  console.log(arrResult);
+  // keep doing until the index begin is bigger than length of array
+  while (lenArr>idxBegin) {
 
-  // slice array into leftover chunk, if exists
-  if (arr.length>sizeTwice) {
-    let arrLeftover = arr.slice(sizeTwice);
-    console.log(arrLeftover);
+    // slice array with index begin + end
+    let arrSlice = arr.slice(idxBegin, idxEnd);
 
-    // add leftover to end of result
-    arrResult.push(arrLeftover)
-    console.log(arrResult);
+    // add array slice to result
+    arrResult.push(arrSlice)
+
+    // exit statement, increment index values
+    idxBegin += size;
+    idxEnd += size;
   }
 
+  console.log(arrResult);
   return arrResult;
 }
 
-chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2);
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+
 
 
 
