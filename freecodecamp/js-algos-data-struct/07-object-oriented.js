@@ -103,39 +103,106 @@ function Dog(name, color, numLegs) {
 let terrier = new Dog('Bobby', 'white');
 
 /** =============================================
- *  
- *  
+ *  Object Oriented Programming: Verify an Object's Constructor with instanceof
+ *  The `instanceof` syntax results in True/False
  */
+
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+
+// Only change code below this line
+let myHouse = new House(2);
+
+console.log(myHouse instanceof House);
+
+/** =============================================
+ *  Object Oriented Programming: Understand Own Properties
+ *  interesting that for-loop of array returns each property.
+ *  The .hasOwnProperty() method returns True/False if object has property.
+ */
+
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+
+let canary = new Bird("Tweety");
+let ownProps = [];
+// Only change code below this line
+for (let property in canary) {
+  if(canary.hasOwnProperty(property)) {
+    ownProps.push(property);
+  }
+}
+
+console.log(ownProps);
+
+/** =============================================
+ *  Object Oriented Programming: Use Prototype Properties to Reduce Duplicate Code
+ *  An object's .prototype.property will add the property to object
+ */
+
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+// Only change code above this line
+let beagle = new Dog("Snoopy");
 
 
 /** =============================================
- *  
+ *  Object Oriented Programming: Iterate Over All Properties
+ *  `own` properties vs. `prototype` properties
+ */
+
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+
+let ownProps = [];
+let prototypeProps = [];
+
+// Only change code below this line
+for (let property in beagle) {
+  if (beagle.hasOwnProperty(property)) {
+    ownProps.push(property);
+  }
+  else {
+    prototypeProps.push(property);
+  }
+}
+
+/** =============================================
+ *  Object Oriented Programming: Understand the Constructor Property
  *  
  */
+
+function Dog(name) {
+  this.name = name;
+}
+
+// Only change code below this line
+function joinDogFraternity(candidate) {
+  if (candidate.constructor == Dog) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 
 /** =============================================
- *  
- *  
- */
-
-
-/** =============================================
- *  
+ *  Object Oriented Programming: Change the Prototype to a New Object
  *  
  */
 
-
-/** =============================================
- *  
- *  
- */
-
-
-/** =============================================
- *  
- *  
- */
 
 
 /** =============================================
