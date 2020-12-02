@@ -181,7 +181,7 @@ for (let property in beagle) {
 
 /** =============================================
  *  Object Oriented Programming: Understand the Constructor Property
- *  
+ *  Instantiating a new object will create a ".constructor" property
  */
 
 function Dog(name) {
@@ -201,6 +201,7 @@ function joinDogFraternity(candidate) {
 /** =============================================
  *  Object Oriented Programming: Change the Prototype to a New Object
  *  Javascript object has key-value format, where key is method and value is function()
+ *  Possible to overwrite the object's .prototype 
  */
 function Dog(name) {
   this.name = name;
@@ -222,7 +223,7 @@ Dog.prototype = {
 
 /** =============================================
  *  Object Oriented Programming: Remember to Set the Constructor Property when Changing the Prototype
- *  
+ *  When overwriting the .prototype, remember to set the .constructor property
  */
 
 function Dog(name) {
@@ -244,7 +245,7 @@ Dog.prototype = {
 
 /** =============================================
  *  Object Oriented Programming: Understand Where an Object’s Prototype Comes From
- *  
+ *  .prototype.isPrototypeOf()
  */
 
 function Dog(name) {
@@ -258,7 +259,7 @@ console.log(Dog.prototype.isPrototypeOf(beagle));
 
 /** =============================================
  *  Object Oriented Programming: Understand the Prototype Chain
- *  
+ *  Object.prototype.isPrototypeOf()
  */
 
 function Dog(name) {
@@ -275,7 +276,7 @@ Object.prototype.isPrototypeOf(Dog.prototype);
 
 /** =============================================
  *  Object Oriented Programming: Use Inheritance So You Don't Repeat Yourself
- *  
+ *  Create a new object .prototype
  */
 
 function Cat(name) {
@@ -306,7 +307,7 @@ Animal.prototype = {
 
 /** =============================================
  *  Object Oriented Programming: Inherit Behaviors from a Supertype
- *  
+ *  Object.create(.prototype)
  */
 
 function Animal() { }
@@ -324,9 +325,107 @@ let beagle = Object.create(Animal.prototype); // Change this line
 
 
 /** =============================================
- *  
+ *  Object Oriented Programming: Set the Child's Prototype to an Instance of the Parent
+ *  Remember that the prototype is like the "recipe" for creating an object. 
+ *  In a way, the recipe for Bird now includes all the key "ingredients" from Animal.
+ *  Dog.prototype = Object.create(Animal.prototype);
+ */
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+
+// Only change code below this line
+Dog.prototype = Object.create(Animal.prototype);
+
+let beagle = new Dog();
+
+
+/** =============================================
+ *  Object Oriented Programming: Reset an Inherited Constructor Property
+ *  you can manually set Bird's constructor property to the Bird object:
+ */
+
+function Animal() { }
+function Bird() { }
+function Dog() { }
+
+Bird.prototype = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Animal.prototype);
+
+// Only change code below this line
+Bird.prototype.constructor = Bird;
+Dog.prototype.constructor = Dog;
+
+
+let duck = new Bird();
+let beagle = new Dog();
+
+
+
+/** =============================================
+ *  Object Oriented Programming: Add Methods After Inheritance
+ *  Step 1: Inherit with Object.create()
+ *  Step 2: Update constructor
+ *  Step 3: Add method
+ *  Bird.prototype.fly = function() {};
+ */
+
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+
+// Only change code below this line
+
+// Dog inherits from Animal
+Dog.prototype = Object.create(Animal.prototype);
+
+// update Dog constructor
+Dog.prototype.constructor = Dog;
+
+// add method to Dog
+Dog.prototype.bark = function() {
+    console.log('Woof!');
+};
+
+// Only change code above this line
+
+let beagle = new Dog();
+
+
+
+/** =============================================
+ *  Object Oriented Programming: Override Inherited Methods
+ *  ChildObject.prototype = Object.create(ParentObject.prototype);
+ *  ChildObject.prototype.methodName = function() {...};
  *  
  */
+
+function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+// Only change code below this line
+
+// Penguin.fly() overrides Bird.fly()
+Penguin.prototype.fly = function() { return "Alas, this is a flightless bird."; };
+
+// Only change code above this line
+
+let penguin = new Penguin();
+console.log(penguin.fly());
 
 
 /** =============================================
@@ -335,15 +434,39 @@ let beagle = Object.create(Animal.prototype); // Change this line
  */
 
 
+
 /** =============================================
  *  
  *  
  */
 
 
+
 /** =============================================
  *  
  *  
  */
+
+
+
+/** =============================================
+ *  
+ *  
+ */
+
+
+
+/** =============================================
+ *  
+ *  
+ */
+
+
+
+/** =============================================
+ *  
+ *  
+ */
+
 
 
