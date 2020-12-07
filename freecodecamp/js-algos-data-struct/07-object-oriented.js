@@ -429,18 +429,47 @@ console.log(penguin.fly());
 
 
 /** =============================================
- *  
- *  
+ *  Object Oriented Programming: Use a Mixin to Add Common Behavior Between Unrelated Objects
+ *  "mixin" adds function to object, without using inheritance
  */
+
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+// Only change code below this line
+let glideMixin = function(obj) {
+  obj.glide = function() {
+    console.log('Gliding, nice job!');
+  }
+};
+
+glideMixin(bird);
+glideMixin(boat);
 
 
 
 /** =============================================
- *  
+ *  Object Oriented Programming: Use Closure to Protect Properties Within an Object from Being Modified Externally
  *  
  */
 
+function Bird() {
+  let weight = 15; // private variable
 
+  this.getWeight = function() {
+    return weight;
+  }
+}
+
+let ducky = new Bird();
+ducky.getWeight();
 
 /** =============================================
  *  
