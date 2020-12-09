@@ -472,17 +472,34 @@ let ducky = new Bird();
 ducky.getWeight();
 
 /** =============================================
- *  
- *  
+ *  Object Oriented Programming: Understand the Immediately Invoked Function Expression (IIFE)
+ *  Also known as "anonymous function" (in Python, lambda function).
+ *  The two parentheses at the end () cause the function to be invoked immediately.
  */
 
-
+(function () {
+  console.log("A cozy nest is ready");
+})();
 
 /** =============================================
- *  
+ *  Object Oriented Programming: Use an IIFE to Create a Module
  *  
  */
 
+let funModule = (function () {
+  return {
+    isCuteMixin: function(obj) {
+      obj.isCute = function() {
+        return true;
+      };
+    },
+    singMixin: function(obj) {
+      obj.sing = function() {
+        console.log("Singing to an awesome tune");
+      };
+    }
+  }
+})();
 
 
 /** =============================================
