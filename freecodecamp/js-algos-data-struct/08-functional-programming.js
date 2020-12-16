@@ -139,17 +139,59 @@ function incrementer () {
 console.log(incrementer()); 
 
 
-/ ** 
+/ ** Functional Programming: Pass Arguments to Avoid External Dependence in a Function
   *   
   */
   
+// The global variable
+var fixedValue = 4;
 
-/ ** 
-  *   
+// Only change code below this line
+function incrementer (fixedValue) {
+  return fixedValue + 1;
+  // Only change code above this line
+}
+
+/ ** Functional Programming: Refactor Global Variables Out of Functions
+  *  Don't alter a variable or object
+  *  Declare function parameters
   */
   
+// The global variable
+var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
-/ ** 
+// Change code below this line
+function add (bookArray, bookName) {
+  let bookListCopy = [...bookArray];
+  bookListCopy.push(bookName);
+  return bookListCopy;
+  
+  // Change code above this line
+}
+
+// Change code below this line
+function remove (bookArray, bookName) {
+  let bookListCopy = [...bookArray];
+  var book_index = bookListCopy.indexOf(bookName);
+  if (book_index >= 0) {
+
+    bookListCopy.splice(book_index, 1);
+    return bookListCopy;
+
+    // Change code above this line
+    }
+}
+
+var newBookList = add(bookList, 'A Brief History of Time');
+var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
+var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+
+console.log(bookList);
+console.log('newBookList', newBookList);
+console.log('newerBookList', newerBookList);
+
+
+/ ** Functional Programming: Use the map Method to Extract Data from an Array
   *   
   */
   
