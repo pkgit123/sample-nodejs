@@ -543,20 +543,44 @@ console.log(nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berli
 
 
 / ** Functional Programming: Combine Two Arrays Using the concat Method
-  *   
+  *  [1, 2, 3].concat([4, 5, 6]);
+  *  // Returns a new array [1, 2, 3, 4, 5, 6]
   */
   
+  function nonMutatingConcat(original, attach) {
+    // Only change code below this line
+    var arrConcat = original.concat(attach);
 
+    return arrConcat;
+    // Only change code above this line
+  }
+  var first = [1, 2, 3];
+  var second = [4, 5];
+  nonMutatingConcat(first, second);
 
-
-/ ** 
-  *   
+/ ** Functional Programming: Add Elements to the End of an Array Using concat Instead of push
+  *  
   */
   
+  function nonMutatingPush(original, newItem) {
+    // Only change code below this line
+    return original.concat(newItem);
 
-/ ** 
-  *   
+    // Only change code above this line
+  }
+  var first = [1, 2, 3];
+  var second = [4, 5];
+  nonMutatingPush(first, second);
+
+
+/ ** Functional Programming: Use the reduce Method to Analyze Data
+  *  The callback function accepts four arguments. 
+  *  The first argument is known as the accumulator, 
+  *  which gets assigned the return value of the callback function from the previous iteration, 
+  *  the second is the current element being processed, 
+  *  the third is the index of that element and the fourth is the array upon which reduce is called.
   */
+  
   
 
 / ** 
